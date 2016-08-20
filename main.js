@@ -31,19 +31,18 @@ if (test === null) {
       var expected = bufferResult.toString();
       var actual   = output.toString();
       try {
-        assert.deepEqual(expected, actual);  
+        assert.deepEqual(expected, actual);
+        console.log("\033[32m" + `[${test}#${fileName}] PASSED!\n`)
       } catch (e) {
-        console.log("\033[31m"+`[${test}#${fileName}] failed!`);
+        console.log("\033[31m"+`[${test}#${fileName}] FAILED!`);
         console.log("==========EXPECTED===========");
         console.log(expected);
         console.log("===========ACTUAL============");
         console.log(actual);
-        console.log("=============================");
-        process.exit(1);
+        console.log("=============================\n");
       }
     });
     runner.stdin.write(bufferTest);
     runner.stdin.end();
   });
-  console.log("\033[32m" + `[${test}] PASSED!`)
 }
