@@ -33,7 +33,7 @@ if (test === null) {
       try {
         assert.deepEqual(expected, actual);  
       } catch (e) {
-        console.log(`[${test}#${fileName}] failed!`);
+        console.log("\033[31m"+`[${test}#${fileName}] failed!`);
         console.log("==========EXPECTED===========");
         console.log(expected);
         console.log("===========ACTUAL============");
@@ -45,5 +45,5 @@ if (test === null) {
     runner.stdin.write(bufferTest);
     runner.stdin.end();
   });
-  console.log(`[${test}] PASSED!`)
+  console.log("\033[32m" + `[${test}] PASSED!`)
 }
