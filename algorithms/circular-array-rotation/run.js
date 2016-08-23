@@ -1,4 +1,4 @@
-var {io} = require("../../utils");
+var io = require("../../utils").io;
 io.readInputLines(main);
 
 function main() {
